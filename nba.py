@@ -75,7 +75,7 @@ process.start()
 
 print('Try out')
 print(seasons)
-print("link to follow" + link_to_follow_list[1:5])
+print(link_to_follow_list[1:5])
 print(arena_list[1:5])
 print(filter_path_list)
 print(visitor_list[1:5])
