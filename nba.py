@@ -43,7 +43,7 @@ class DC_Chapter_Spider(scrapy.Spider):
     
   def parse_table(self, response):
     date = response.xpath('//th[@data-stat="date_game"]/a/text()').extract()
-    visitor = response.xpath('//td[@data-stat="visitor_team_name"]/a/text()').extract()
+    visitor = response.xpath('//td[@data-stat="visitor_team_name"]/a/text()')
     visitor_pts = response.xpath('//td[@data-stat="visitor_pts"]/text()').extract()
     home = response.xpath('//th[@data-stat="home_team_name"]/a/text()').extract()
     home_pts = response.xpath('//td[@data-stat="home_pts"]/text()').extract()
@@ -77,5 +77,5 @@ print('Try out')
 print(seasons)
 print(link_to_follow_list[1:5])
 print(arena_list[1:5])
-print(filter_path_list)
+print(filter_path_list[1:5])
 print(visitor_list[1:5])
