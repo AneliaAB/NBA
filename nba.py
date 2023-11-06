@@ -25,7 +25,7 @@ class DC_Chapter_Spider(scrapy.Spider):
         time.sleep(2)
 
   def parse_results(self, response):
-    link_to_follow = response.xpath('///ul[@class="hoversmooth"]/li[3]/a/@href')
+    link_to_follow = response.xpath('//ul[@class="hoversmooth"]/li[3]/a/@href')
     for url in link_to_follow:
         yield response.follow(url = url,
                                 callback = self.parse_filter)
