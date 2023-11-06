@@ -73,6 +73,6 @@ process.start()
 
 print(seasons)
 print(link_to_follow_list)
-print(arena_list)
+print(arena_list[1:5])
 print(filter_path_list)
-print(visitor_list)
+print(visitor_list[1:5])
