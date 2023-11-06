@@ -74,7 +74,7 @@ process.crawl(DC_Chapter_Spider)
 process.start()
 
 print('Try out')
-print(seasons)
+print(seasons[1:5])
 print(link_to_follow_list[1:5])
 print(arena_list[1:5])
 print(filter_path_list[1:5])
