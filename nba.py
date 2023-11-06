@@ -35,6 +35,7 @@ class DC_Chapter_Spider(scrapy.Spider):
     #header = response.xpath('//h1/span[@class="header_end"]/text()')
     #header_list.append(header)
     filter_path = response.xpath('//div[@class="filter"]//div/a/@href').extract()
+    filter_path_list.append(filter_path)
     yield response.follow(url = filter_path,
                             callback = self.parse_table)
     time.sleep(2)
@@ -47,6 +48,8 @@ class DC_Chapter_Spider(scrapy.Spider):
     home_pts = response.xpath('//td[@data-stat="home_pts"]/text()').extract()
     arena = response.xpath('//td[@data-stat="arena_name"]/text()').extract()
     arena_list.append(arena)
+    visitor_list.append(visitor)
+
 
     link_to_follow = response.xpath('//td[@data-stat="box_score_text"]/a/@href')
     yield response.follow(url = link_to_follow,
@@ -58,8 +61,9 @@ class DC_Chapter_Spider(scrapy.Spider):
 
 seasons = []
 link_to_follow_list = []
-header_list = []
+filter_path_list = []
 arena_list = []
+visitor_list = []
 
 dict_data = dict()
 # Run the Spider
@@ -70,3 +74,5 @@ process.start()
 print(seasons)
 print(link_to_follow_list)
 print(arena_list)
+print(filter_path_list)
+print(visitor_list)
